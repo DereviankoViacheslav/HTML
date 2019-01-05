@@ -1,0 +1,411 @@
+@import "normalize.scss";
+@import "fonts.scss";
+@import "variables.scss";
+@import "mixin.scss";
+
+*, h1, h2 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  border: 10px solid white;
+  font-family: josefin_sans, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: white;
+}
+
+//--------   обертка центрирует контент   ------------
+.b-wrapper {
+  width: 90%;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+//--------   общие стили для всех заголовков BHROMAON   ------------
+.b-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  &__logo {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+//--------   общие стили для всех кнопок   ------------
+.b-button {
+  width: 225px;
+  height: 60px;
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 26px;
+  background-color: #5474fd;
+  border: none;
+  outline: none;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  &:hover {
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, .9);
+    text-shadow: 0 0 10px rgba(0, 0, 255, .9);
+  }
+}
+
+//--------   шапка   ------------
+.b-main-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 10px);
+  background: url("../img/bg-header.jpg") #1c7cb4 center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  &__title {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 26px;
+    padding-bottom: 15px;
+  }
+  &__subtitle {
+    padding-bottom: 45px;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 4px;
+  }
+  &__search {
+    margin-bottom: 120px;
+  }
+}
+
+//--------   поиск в шапке   ------------
+.b-search {
+  font-size: 0;
+  &:hover {
+    box-shadow: 0 0 8px 5px rgba(00, 04, 50, .5);
+  }
+  &__input {
+    width: 500px;
+    height: 60px;
+    padding: 0 15px;
+    color: #999999;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 2px;
+    outline: none;
+    border: 2px solid white;
+  }
+  &__button {
+    padding: 0 20px 11px 35px;
+    font-family: aleo, sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-align: center;
+    background-color: #5474fd;
+    text-transform: uppercase;
+    outline: none;
+    color: white;
+    border: 2px solid white;
+    height: 60px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: inset 0 0 10px rgba(00, 04, 50, .5);
+    }
+  }
+  &__icon {
+    font-size: 26px;
+    font-weight: 100;
+    padding-left: 10px;
+  }
+}
+
+//--------   якорь   ------------
+.b-scroll-marker {
+  &__text {
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  &__anchor {
+    text-decoration: none;
+    color: white;
+  }
+  &__arrow {
+    font-size: 26px;
+    cursor: pointer;
+  }
+  &:hover {
+    text-shadow: 2px 2px 5px rgba(00, 04, 50, .5);
+  }
+}
+
+//--------   блок навигация   ------------
+.b-navigation {
+  background-color: #5474fd;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    padding-top: 30px;
+    padding-bottom: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 26px;
+  }
+}
+
+//--------   блок с елементами меню   ------------
+.b-nav-list {
+  list-style: none;
+  .b-nav-list__item {
+    display: inline-block;
+    margin-left: 40px;
+    font-family: aleo, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 26px;
+    text-transform: uppercase;
+    &:hover {
+      text-shadow: 0 0 5px rgba(0, 0, 0, .9);
+    }
+  }
+  &__item--link {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+//--------   блок вступления "Why Choose Us"   ------------
+.b-intro {
+  background: url("../img/bg-intro.jpg") center center no-repeat;
+  background-size: cover;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 120px;
+    padding-bottom: 107px;
+  }
+  &__information {
+    margin-top: 75px;
+    flex-grow: 1;
+    flex-basis: 50%;
+  }
+  &__photos {
+    flex-grow: 1;
+    flex-basis: 50%;
+  }
+}
+
+//--------   текст в блоке вступления "Why Choose Us"   ------------
+.b-information {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  line-height: 26px;
+  font-weight: normal;
+  color: #e8e8e8;
+  &__title {
+    padding-bottom: 63px;
+    font-family: aleo, sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+  }
+  &__text {
+    padding-bottom: 25px;
+  }
+  &__button {
+    margin-top: 20px;
+    font-family: aleo, sans-serif;
+    letter-spacing: 1px;
+  }
+}
+
+//--------   фото в блоке вступления "Why Choose Us"   ------------
+.b-photos {
+  text-align: right;
+  &__photo--first {
+    margin-right: 125px;
+  }
+  &__photo {
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 255, 255, .9);
+    }
+  }
+}
+
+//--------   блок инструментов   ------------
+.b-tools {
+  background-color: #333333;
+  text-align: center;
+  font-family: aleo, sans-serif;
+  font-size: 36px;
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 107px;
+    padding-top: 100px;
+  }
+  &__search {
+    margin-right: 170px;
+  }
+  &__places {
+    margin-right: 170px;
+  }
+  &__img {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 18px;
+    cursor: pointer;
+  }
+  &__title {
+    cursor: pointer;
+    &:hover {
+      text-shadow: 0 0 10px rgba(255, 255, 50, .9);
+    }
+  }
+}
+
+//--------   блок о стране   ------------
+.b-country {
+  &__wrapper {
+    padding-top: 230px;
+    padding-bottom: 105px;
+  }
+  &__wrapper--content-right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  &--first {
+    background: url("../img/country-1.jpg") center center no-repeat;
+    background-size: cover;
+  }
+  &--second {
+    background: url("../img/country-2.jpg") center center no-repeat;
+    background-size: cover;
+  }
+}
+
+//--------   инфо о стране   ------------
+.b-country-inform {
+  width: 540px;
+  padding: 50px 30px;
+  background-color: rgba(23, 23, 23, .9);
+  font-size: 20px;
+  font-weight: normal;
+  font-family: josefin_sans, sans-serif;
+  &__name {
+    font-size: 20px;
+    line-height: 20px;
+    padding-bottom: 30px;
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding-bottom: 23px;
+  }
+  &__text {
+    padding-bottom: 45px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+//--------   блок отзывы   ------------
+.b-reviews {
+  padding-top: 123px;
+  padding-bottom: 195px;
+  background: url("../img/bg-reviews.jpg") no-repeat;
+  background-size: cover;
+  &__title {
+    padding-bottom: 100px;
+    line-height: 26px;
+    font-size: 36px;
+    font-family: aleo, sans-serif;
+    font-weight: normal;
+    text-align: center;
+  }
+}
+
+//--------   блок отзыв   ------------
+.b-review {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: josefin-sans, sans-serif;
+  &__info {
+    background-color: #333333;
+    flex-basis: 560px;
+    flex-grow: 1;
+    padding: 45px 40px 40px 60px;
+  }
+  &__title {
+    padding-bottom: 40px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 26px;
+    text-transform: uppercase;
+  }
+  &__text {
+    font-size: 14px;
+    line-height: 26px;
+    position: relative;
+    font-weight: normal;
+    text-indent: 30px;
+  }
+  &__quote {
+    position: absolute;
+    left: -30px;
+    top: -10px;
+    font-size: 22px;
+    color: #5474fd;
+  }
+}
+
+//--------   футер   ------------
+.b-main-footer {
+  background-color: #232323;
+  text-align: center;
+  &__title {
+    padding-top: 120px;
+    padding-bottom: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 26px;
+  }
+  &__subtitle {
+    padding-bottom: 23px;
+    line-height: 26px;
+    font-weight: normal;
+  }
+  &__social-links {
+    padding-bottom: 50px;
+  }
+}
+
+//--------   блок: линки на соц-сети   ------------
+.b-social-links {
+  &__link {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    &:hover {
+      text-shadow: 0 0 10px rgba(100, 100, 255, .9);
+    }
+  }
+  &__link:nth-child(3) {
+    color: #5474fd;
+  }
+}
